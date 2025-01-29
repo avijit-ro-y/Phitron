@@ -1,50 +1,27 @@
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
 
-
-
-int main()
-{
-    
-    long long testcase;
-    cin>>testcase;
-    while (testcase--)
+int main(){
+    int t;
+    cout<<"Enter the testcase:";
+    cin>>t;
+    for (int i = 0; i < t; i++)
     {
-        long long n;
+        set<int>s;
+        int n;
         cin>>n;
-        long long array[n];
-        long long array2[n];
-        for (int i = 0; i < n; i++)
+        while (n--)
         {
-            cin>>array[i];
+            int val;
+            cin>>val;
+            s.insert(val);
         }
-        for (int i = 0; i < n; i++)
+        for (auto it = s.begin(); it !=s.end(); it++)
         {
-            array2[i]=array[i];
+            cout<<*it<<" ";
         }
-        sort(array2,array2+n);
-        long long indicator=0;
-        for (int i = 0; i < n; i++)
-        {
-            if (array2[i]!=array[i])
-            {
-                indicator=0;
-            }
-            else{
-                indicator++;
-            }
-        }
-        if (indicator==n)
-        {
-            cout<<"YES"<<endl;
-        }
-        else{
-            cout<<"NO"<<endl;
-        }
+        cout<<endl;
     }
     
-    // Write your code here
-
     return 0;
 }
